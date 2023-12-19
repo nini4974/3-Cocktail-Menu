@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,100;1,800&family=Calligraffitti&family=Dosis:wght@200;300;400;500;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Calligraffitti", sans-serif;
+}
+body {
+}
+.header {
+  padding: 2rem 10rem;
+  background-color: #f5761a;
+}
+.header .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 5rem;
+  color: white;
+  transform: rotate(20deg);
+  animation: rotate 2s infinite linear alternate-reverse;
+}
+.header .top-bar ul {
+  list-style: none;
+}
+.header .top-bar li a {
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+.header .top-bar li a i {
+  align-self: flex-end;
+}
+.search-container {
+  width: 70%;
+  margin: 0 auto;
+}
+.search-container form .search-input {
+  padding: 1.5rem 1rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  font-size: 2.5rem;
+  color: gray;
+}
+.form-group {
+  position: relative;
+  /* xaxis, yaxis, radius, color */
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+.search-container form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 7rem;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #5f2902;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.result-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+  /* background-color: #5f2902; */
+  padding: 4rem 10rem;
+  margin: 0 auto;
+}
+.drink-card {
+  width: 100%;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.5s;
+  transform: scale(0.9);
+}
+.drink-card:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+.drink-card .img-container {
+  width: 100%;
+}
+.drink-card .img-container img {
+  width: 100%;
+}
+.drink-card h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  padding: 1rem;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
