@@ -96,8 +96,9 @@ body {
   opacity: 1;
   transform: scale(1);
 }
-.drink-card .img-container {
+.drink-card img {
   width: 100%;
+  object-fit: cover;
 }
 .drink-card .img-container img {
   width: 100%;
@@ -108,6 +109,68 @@ body {
   font-weight: bold;
   font-style: italic;
   padding: 1rem;
+}
+.popup-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  perspective: 1000px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s;
+  z-index: 1;
+}
+.popup-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+.popup {
+  font-size: 8rem;
+  background-color: white;
+  width: 60rem;
+  height: 50rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  border-radius: 1.5rem;
+  transition: all 0.5s 0.7s;
+}
+/* .popup:hover {
+  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+} */
+.popup-container.show .popup {
+  transform: translate(-50%, -50%) scale(1);
+}
+.popup-container.show + .result-container * {
+  filter: grayscale(100%);
+}
+.close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  top: 2rem;
+  right: 1rem;
+  font-size: 6rem;
+  color: red;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  transition: all 0.5s;
+}
+.close-btn:hover {
+  background-color: red;
+  color: white;
+  transform: rotate(30deg);
 }
 @keyframes rotate {
   0% {
