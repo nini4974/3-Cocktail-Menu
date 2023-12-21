@@ -128,16 +128,79 @@ body {
   visibility: visible;
 }
 .popup {
-  font-size: 8rem;
-  background-color: white;
-  width: 60rem;
-  height: 50rem;
-  position: absolute;
+  margin-top: 2rem;
+  font-size: 2rem;
+  background-color: rgb(235, 192, 192);
+  width: 100rem;
+  height: 90rem;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.5);
   border-radius: 1.5rem;
   transition: all 0.5s 0.7s;
+
+  display: grid;
+  grid-template-rows: 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem;
+  grid-template-columns: 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem 10rem;
+}
+.popup-img {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  grid-row-start: 1;
+  grid-row-end: 9;
+  grid-column-start: 1;
+  grid-column-end: 8;
+  border-radius: 3rem;
+}
+.popup-title {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 8;
+  grid-column-end: 11;
+  margin-left: 2rem;
+  color: #5f2902;
+  font-size: 6rem;
+  margin-left: 3rem;
+}
+.popup-description {
+  grid-row-start: 8;
+  grid-row-end: 11;
+  grid-column-start: 1;
+  grid-column-end: 11;
+  font-size: 2rem;
+  color: rgb(65, 2, 2);
+  margin-left: 2rem;
+  margin-top: 5rem;
+}
+.popup-ingredient {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 8;
+  grid-column-end: 11;
+  margin-top: 4rem;
+  font-size: 3rem;
+  padding: 5rem;
+  font-weight: bolder;
+}
+ol {
+  grid-row-start: 5;
+  grid-row-end: 8;
+  grid-column-start: 8;
+  grid-column-end: 11;
+  font-size: 2rem;
+  margin-left: 6rem;
+  margin-top: 5rem;
+}
+div.popup ol#ingredients-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+div.popup ol#ingredients-list {
+  padding: 1rem;
+  border: #f5761a solid;
+  font-size: 1rem;
 }
 /* .popup:hover {
   transform: translate(-50%, -50%) scale(1) rotateY(0deg);
@@ -146,7 +209,11 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 .popup-container.show + .result-container * {
+  /* 0, 4px, and 1.5rem */
+  /* filter: blur(4px); */
   filter: grayscale(100%);
+  /* 0, 0.20, 60%, and 1 */
+  /* filter: grayscale(60%); */
 }
 .close-btn {
   position: absolute;
