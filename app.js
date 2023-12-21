@@ -15,24 +15,26 @@ form.addEventListener("submit", (e) => {
 
   let searchedValue = inputE1.value;
   inputE1.value = "";
-  findDrinks(searchedValue);
 
   resultContainer.innerHTML = "";
+
+  findDrinks(searchedValue);
 });
 
 async function findDrinks(cocktail) {
   const header = {
     method: "GET",
     headers: {
-      // "Content-Type": "application/json",
       Accept: "application/json",
     },
   };
+
   try {
     let res = await fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`,
       header
     );
+
     let data = await res.json();
     console.log(data);
 
@@ -66,19 +68,12 @@ async function findDrinks(cocktail) {
         let pIngredient = document.createElement("p");
         pIngredient.classList.add("popup-ingredient");
         pIngredient.textContent = "Ingredients";
-        // let popUpImg = document.createElement("div");
-        // popUpImg.innerHTML = `
-        //  <img class="popUp-img" src="${e.target.parentNode.getAttribute(
-        //    "data-img"
-        //  )}" >
-        // `;
 
         popUp.appendChild(popUpImg);
         popUp.appendChild(h4Element);
         popUp.appendChild(pElement);
         popUp.appendChild(olElement);
         popUp.appendChild(pIngredient);
-
         popUp.appendChild(closeBtn);
       };
 
@@ -101,15 +96,13 @@ async function findDrinks(cocktail) {
       }
 
       drinkDiv.innerHTML = `
-
       <img src="${data.drinks[i].strDrinkThumb}">
       <h3>${data.drinks[i].strDrink}</h3>
-     
     `;
 
       resultContainer.appendChild(drinkDiv);
     }
   } catch (er) {
-    alert(`No cocktails found with that ${cocktail} name!`);
+    alert(`No cocktails found with the name: ${cocktail}`);
   }
 }

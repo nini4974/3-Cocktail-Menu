@@ -160,8 +160,8 @@ body {
   grid-column-end: 11;
   margin-left: 2rem;
   color: #5f2902;
-  font-size: 6rem;
-  margin-left: 3rem;
+  font-size: 5rem;
+  margin-left: 5rem;
 }
 .popup-description {
   grid-row-start: 8;
